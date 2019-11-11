@@ -249,8 +249,22 @@ function getOlderCars(inventory, year) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
+function getGermanCars(inventory) {
+    let germanCars1 = []
+    for (var i=0; i<inventory.length; i++)
+        if (inventory[i].car_make == 'Audi')
+        germanCars1[i]=inventory[i]
+        else if (inventory[i].car_make == 'Mercedes-Benz')
+        germanCars1[i]=inventory[i]
+        else if (inventory[i].car_make == 'Volkswagen')
+        germanCars1[i]=inventory[i]
+        else if (inventory[i].car_make == 'BMW')
+        germanCars1[i]=inventory[i]
+        else germanCars1[i]=null
+    let germanCars2 = germanCars1.filter(function (el) {
+        return el != null;
+        });
+    return germanCars2
 }
 
 /**
@@ -271,9 +285,17 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => {
+      return a + b
+    }
+
+const addFive = (num) => {
+    return num + 5
+} 
+
+const argTimesTwo = (num) => {
+    return num * 2
+}
 
 /**
  * ### Challenge `carMaker`
